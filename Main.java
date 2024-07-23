@@ -1,48 +1,29 @@
 class Main{
 	public static void main(String [] args){
-		Person p = new Person("Rushikesh", 23, 5.5);
-
-		//1
-		p.displayInfo();
-
-		//2
-		p.displayInfo(1, 10000);
-	
-		//3
-		boolean result = p.displayInfo(true);
-		System.out.println(result);
+		Shape s = new Shape();
+		s.area(10);
+		s.area(10, 10);
+		s.area(10.0, 10.0);
+		s.area(10.5);		
 	}
 }
 
-class Person{
-	String name;
-	int age;
-	double height;
-
-	Person(String name, int age, double height){
-		this.name = name;
-		this.age = age;
-		this.height = height;
+class Shape{
+	public void area(int s){
+		int area = s*s;
+		System.out.println("Area of Square " + area);
 	}
-
-	//1
-	public void displayInfo(){
-		System.out.println(name);
-		System.out.println(age);
-		System.out.println(height);
+	public void area(int b, int h){
+		int area = b*h;
+		System.out.println("Area of reactangle " +area);
 	}
-
-	//2
-	protected void displayInfo(int eid, int salary){
-		System.out.println(name);
-		System.out.println(age);
-		System.out.println(height);
-		System.out.println(eid);
-		System.out.println(salary);
+	public void area(double b, double h){
+		double area =( b*h)*(0.5);
+		System.out.println("Area of Triangle " + area);
 	}
-
-	//3
-	boolean displayInfo(boolean result){
-		return result;
+	public void area(double r){
+		double area = r * r * 3.14;
+		System.out.println("Area of circle " + area);
 	}
 }
+
