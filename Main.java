@@ -1,29 +1,40 @@
-class Main{
-	public static void main(String [] args){
-		Shape s = new Shape();
-		s.area(10);
-		s.area(10, 10);
-		s.area(10.0, 10.0);
-		s.area(10.5);		
+public class Main {
+	public static void main(String [] args) {
+	Student o = new Student("Rushikesh", 10);
+	int total = o.getMarks(50,50,50);
+	int per = o.getMarks(total, 3);
+	
+	System.out.println("Total is : " + total + " & percentage is : "+ per);
+	o.displayInfo();
+	
 	}
 }
 
-class Shape{
-	public void area(int s){
-		int area = s*s;
-		System.out.println("Area of Square " + area);
+
+class Student {
+	String name;
+	int id;
+	int total;
+	int per;
+	
+	Student(String name, int id){
+		this.name = name;
+		this.id = id;
 	}
-	public void area(int b, int h){
-		int area = b*h;
-		System.out.println("Area of reactangle " +area);
+	
+	public int getMarks(int sub1, int sub2, int sub3) {
+		total = sub1 + sub2 + sub3;
+		return total;
 	}
-	public void area(double b, double h){
-		double area =( b*h)*(0.5);
-		System.out.println("Area of Triangle " + area);
+	public int getMarks(int totalMark, int totalSub ) {
+		per = totalMark/totalSub;
+		return per;
 	}
-	public void area(double r){
-		double area = r * r * 3.14;
-		System.out.println("Area of circle " + area);
+	
+	public void displayInfo() {
+		System.out.println(name);
+		System.out.println(id);
+		System.out.println(total);
+		System.out.println(per);
 	}
 }
-
